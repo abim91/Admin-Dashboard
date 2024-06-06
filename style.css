@@ -9,7 +9,7 @@ body{
  /*   border-style: solid;/*delete at end*/
   /*  border-color: black;*/
     display: grid;
-    grid-template: minmax(90px, 1fr) 4fr/ minmax(190px,1fr) 5fr;
+    grid-template: minmax(90px, 1fr) minmax(190px,4fr)/ minmax(190px,1fr) minmax(700px,5fr);
 }
 /*Setting the basic layout*/
 .sidebar{
@@ -91,3 +91,46 @@ a{
 
 
 /*End code for sidebar*/
+
+/*Code for header Start*/
+.header{
+    display: grid;
+    grid-template: 1fr 1fr/ 0.75fr 0.25fr;
+}
+
+.header .searchbar {
+    display: flex;
+    align-items: center;
+    gap:10px;
+    padding-left: 25px;
+    svg{
+    fill:black;
+    width:20px;
+    height:20px;
+    
+    }
+    input{
+        width: 70%;
+        background-color: #E2E8F0;
+        border-radius:10px;
+        height: 40%;
+        border-style: none;
+    }
+}
+.header .user-links{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    svg{
+     
+        width:20px;
+        height:20px;
+    }
+    .user-logo{
+        fill: red;
+        width: 40px;
+        height: 40px;
+    }
+}
+/*Code for header end*/
