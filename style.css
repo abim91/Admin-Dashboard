@@ -1,18 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 html,body{
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
     margin: 0px;
   /*  border-style: solid;
     border-color: red;*/
 }  
 body{
-    width:100vw;
-    height:100vh;
-   border-style: solid;/*delete at end*/
-    border-color: black;
-    min-height: 100%;
+  /* border-style: solid;/*delete at end*/
+  /*  border-color: black;*/
+    font-family: Roboto;
     display: grid;
-    grid-template: minmax(90px, 1fr) minmax(190px,4fr)/ minmax(190px,1fr) minmax(700px,5fr);
+    grid-template: minmax(110px, 1fr) minmax(190px,4fr)/ minmax(190px,1fr) minmax(700px,5fr);
 }
 /*Setting the basic layout*/
 .sidebar{
@@ -100,6 +100,7 @@ a{
 .header{
     display: grid;
     grid-template: 1fr 1fr/ 0.75fr 0.5fr;
+    
 }
 
 .header .searchbar {
@@ -194,7 +195,7 @@ a{
 /*code for main content*/
 .main-content{
     display: grid;
-    grid-template: minmax(100px,.6fr).5fr/ 1fr .4fr;
+    grid-template: 1fr 1fr/ 1fr .4fr;
     
     
     
@@ -202,19 +203,20 @@ a{
 .projects{
     grid-column: 1/2;
     grid-row: 1/3;
-    border-style: solid;
-   
+ /*   border-style: solid;*/
+    
+    margin-bottom: 20px;
     display: grid;
-    grid-template-rows: 10% minmax(200px,1fr);
+    grid-template-rows: 10% minmax(0,1fr);
     h3{
         margin : 5px 0px 5px 5px;
     }
     .cards{
-        border-style: solid;
-        border-color: rgb(78, 2, 255);
+     /*   border-style: solid;
+        border-color: rgb(78, 2, 255);*/
 
         display: grid;
-        grid-template: repeat(3,1fr) /repeat(2,1fr) ;
+        grid-template: repeat(3,minmax(0px,1fr)) /repeat(2,1fr) ;/*this stops the overflow of the cards, */
         align-content: start;
         gap: 10px;
         padding: 0px 10px 0px 10px;
@@ -222,8 +224,8 @@ a{
 
     }     
 }
-.cards > .card{
-    font-size: small;
+.card{
+    font-size: x-small;
     border-style: none;
     border-left-style: solid;
     border-radius: 11px;
@@ -232,6 +234,7 @@ a{
     background-color: white;
     padding:10px;
     padding-top: 0px;
+  
     
     svg{
         width: 15px;
@@ -240,6 +243,7 @@ a{
     .icons{
         display: flex;
         justify-content: flex-end;
+        padding-top: 30px;
         gap:15px
     }
 }
@@ -256,6 +260,7 @@ a{
     grid-row: 1/2;
     border-style: solid;
     border-color: red;
+   
 }
 .trending{
     grid-column: 2/-1;
@@ -269,7 +274,11 @@ a{
 /*Start code for the announcement section*/
 #announcement-main-title{
     margin-bottom: 5px;
+    margin-top:0px;
     
+}
+.announcement-title{
+    margin-bottom: 0px;
 }
 .updates-block{
     font-size: x-small;
@@ -278,24 +287,28 @@ a{
     align-content: start;
     border-radius: 5px;
     background-color: white;
+    margin-right: 10px;
+    margin-left: 10px;
     padding: 10px;
-  
 
 }
 .announcement1{
     grid-row: 1/2;
-    border-style: solid;
-    border-color: blue;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: 1px;
+
 }
 .announcement2{
     grid-row: 2/3;
-    border-style: solid;
-    border-color: green;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: 1px;
+   
 }
 .announcement3{
     grid-row: 3/-1;
-    border-style: solid;
-    border-color: red;
+  
 }
 
 .announcement-title{
