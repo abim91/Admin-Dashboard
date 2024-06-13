@@ -45,6 +45,7 @@ body{
 
 /*Code for sidebar*/
 .sidebar{
+    
     display: flex;
     flex-direction: column;
     gap:10px;
@@ -195,7 +196,8 @@ a{
 /*code for main content*/
 .main-content{
     display: grid;
-    grid-template: 1fr 1fr/ 1fr .4fr;
+    grid-template: minmax(0px,1fr) minmax(0px,1fr)/ minmax(0px,1fr) minmax(0px,0.4fr);
+    
     
     
     
@@ -226,7 +228,7 @@ a{
 }
 .card{
     font-size: x-small;
-    border-style: none;
+    flex-grow:1;
     border-left-style: solid;
     border-radius: 11px;
     border-left-width: 7px;
@@ -234,19 +236,29 @@ a{
     background-color: white;
     padding:10px;
     padding-top: 0px;
+    
+    
+    display: flex;
+    flex-direction: column;
   
     
     svg{
         width: 15px;
         height: 15px;
     }
+    
     .icons{
+        
+        min-height: 0;
         display: flex;
         justify-content: flex-end;
-        padding-top: 30px;
+        
         gap:15px
+        
     }
+
 }
+
 .card-title{
     margin-bottom: 0px;
 }
@@ -258,15 +270,22 @@ a{
 .announcement{
     grid-column: 2/-1;
     grid-row: 1/2;
-    border-style: solid;
-    border-color: red;
+    display:grid;
+    grid-template-rows: 25px minmax(0,1fr);
+   /* border-style: solid;
+    border-color: red;*/
+    padding-bottom: 10px;
    
 }
 .trending{
     grid-column: 2/-1;
     grid-row: 2/-1;
-    border-style: solid;
+  
+    padding-bottom: 10px;
+    /*
     border-color: blue;
+    border-style: solid;*/
+   
 
 }
 /*end code for main content*/
@@ -276,20 +295,26 @@ a{
     margin-bottom: 5px;
     margin-top:0px;
     
+    
 }
 .announcement-title{
     margin-bottom: 0px;
+    margin-top:0px;
+    padding-bottom: 1px;
+   
 }
-.updates-block{
-    font-size: x-small;
+div.updates-block{
+    font-size: xx-small;
     display: grid;
-    grid-template: repeat(3,1fr)/1fr;
-    align-content: start;
+    place-items: center;
+    grid-template: repeat(3,minmax(0px,1fr))/minmax(0px,1fr);
+    
     border-radius: 5px;
     background-color: white;
     margin-right: 10px;
     margin-left: 10px;
-    padding: 10px;
+    padding:10px;
+   
 
 }
 .announcement1{
@@ -298,24 +323,101 @@ a{
     border-bottom-color: gray;
     border-bottom-width: 1px;
 
+   
+    
+
 }
 .announcement2{
     grid-row: 2/3;
     border-bottom-style: solid;
     border-bottom-color: gray;
     border-bottom-width: 1px;
-   
+    margin-bottom: 7px;
+    margin-top: 20px;
 }
 .announcement3{
+    margin-top: 20px;
     grid-row: 3/-1;
+    margin-top: 30px;
   
 }
 
-.announcement-title{
-    margin-top:0px;
-}
+
+
 .announce-item{
   /*  border-style: solid;
     border-color: purple;*/
+    
+    width:70%;
+    p:last-child{
+        margin-top: 0px;
+    }
 }
 /* end code the announement section*/
+
+/*start trending part*/
+.trending{
+    display: grid;
+    grid-template-rows: auto minmax(0,1fr);
+}
+.trending-item{
+    display: flex;
+    gap:10px;
+    
+    svg{
+       width:40px;
+       height: 40px; 
+    }
+}
+
+.user-trending-info{
+    p{
+        margin:0px;
+        font-size: small;
+    }
+    p:last-child{
+        color:gray;
+    }
+    
+}
+.trending-block{
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    align-items: flex-start;
+    border-radius: 3%;
+    margin-left:10px;
+    margin-right: 10px;
+   
+    .trending-user1{
+        svg{
+            fill:#e0f2fe;
+        }
+        
+
+    }
+    .trending-user2{
+        svg{
+            fill:#f9cb17;
+        }
+        
+        
+    }
+    .trending-user3{svg{
+        fill:#a2a4a3;
+    }
+  
+}
+
+    .trending-user4{
+        svg{
+            fill:#fca4ae;
+        }
+        
+    }
+    
+}
+/*end trending part*/
